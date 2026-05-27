@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package smart_agriculture_management_system;
-
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author HP 850 G5
@@ -17,8 +19,7 @@ public class WelcomeForm extends javax.swing.JFrame {
      */
     public WelcomeForm() {
         initComponents();
-        System.out.println(getWidth());
-System.out.println(getHeight());
+        jPanelCreateAccount.setVisible(false);
     }
 
     /**
@@ -31,17 +32,48 @@ System.out.println(getHeight());
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelCreateAccount = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButtonCABack = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jButtonCACreate = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jDateChooserCADOB = new com.toedter.calendar.JDateChooser();
+        jComboBoxCARole = new javax.swing.JComboBox<>();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jTextFieldCANIC = new javax.swing.JTextField();
+        jTextFieldCAFullName = new javax.swing.JTextField();
+        jTextFieldCAEmail = new javax.swing.JTextField();
+        jTextFieldCAAddress = new javax.swing.JTextField();
+        jTextFieldCApassword = new javax.swing.JTextField();
+        jTextFieldCAPhoneNo = new javax.swing.JTextField();
+        jTextFieldCAUserName = new javax.swing.JTextField();
+        jPanelLogin = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButtonLSignUp = new javax.swing.JButton();
-        jTextFieldLPassword = new javax.swing.JTextField();
         jTextFieldLUserName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButtonLSignIn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jTextFieldLPassword = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +88,150 @@ System.out.println(getHeight());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(40, 40, 40));
+        jPanelCreateAccount.setBackground(new java.awt.Color(40, 40, 40));
+        jPanelCreateAccount.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Create Account");
+        jPanelCreateAccount.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 6, 187, 63));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText(":");
+        jPanelCreateAccount.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 20, -1));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("User Name");
+        jPanelCreateAccount.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 318, -1, -1));
+
+        jButtonCABack.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonCABack.setText("Back");
+        jButtonCABack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCABackActionPerformed(evt);
+            }
+        });
+        jPanelCreateAccount.add(jButtonCABack, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 400, 100, -1));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Password");
+        jPanelCreateAccount.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText(":");
+        jPanelCreateAccount.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 20, -1));
+
+        jButtonCACreate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonCACreate.setText("Create");
+        jButtonCACreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCACreateActionPerformed(evt);
+            }
+        });
+        jPanelCreateAccount.add(jButtonCACreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 110, -1));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Full Name");
+        jPanelCreateAccount.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 85, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText(":");
+        jPanelCreateAccount.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 20, -1));
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("NIC");
+        jPanelCreateAccount.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Date of birth");
+        jPanelCreateAccount.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 153, 107, -1));
+
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Address");
+        jPanelCreateAccount.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 186, 107, -1));
+
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Email");
+        jPanelCreateAccount.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 219, 107, -1));
+
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Role");
+        jPanelCreateAccount.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 252, 107, -1));
+
+        jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Phone No");
+        jPanelCreateAccount.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 285, 107, -1));
+        jPanelCreateAccount.add(jDateChooserCADOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 140, -1));
+
+        jComboBoxCARole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Farmer", "Buyer", "Officer" }));
+        jPanelCreateAccount.add(jComboBoxCARole, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 253, 100, -1));
+
+        jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText(":");
+        jPanelCreateAccount.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 20, -1));
+
+        jLabel28.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText(":");
+        jPanelCreateAccount.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 20, -1));
+
+        jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText(":");
+        jPanelCreateAccount.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 188, 20, -1));
+
+        jLabel30.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText(":");
+        jPanelCreateAccount.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 20, -1));
+
+        jLabel31.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText(":");
+        jPanelCreateAccount.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 20, -1));
+
+        jLabel32.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText(":");
+        jPanelCreateAccount.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 284, 20, -1));
+
+        jTextFieldCANIC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCANIC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 115, 290, -1));
+
+        jTextFieldCAFullName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCAFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 290, -1));
+
+        jTextFieldCAEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCAEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 218, 290, -1));
+
+        jTextFieldCAAddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCAAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 182, 290, -1));
+
+        jTextFieldCApassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCApassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 290, -1));
+
+        jTextFieldCAPhoneNo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCAPhoneNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 283, 290, -1));
+
+        jTextFieldCAUserName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanelCreateAccount.add(jTextFieldCAUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 316, 290, -1));
+
+        jPanel1.add(jPanelCreateAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 750, 450));
+
+        jPanelLogin.setBackground(new java.awt.Color(40, 40, 40));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,8 +252,6 @@ System.out.println(getHeight());
                 jButtonLSignUpActionPerformed(evt);
             }
         });
-
-        jTextFieldLPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jTextFieldLUserName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
@@ -102,56 +275,60 @@ System.out.println(getHeight());
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Forgot Password ?");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        jTextFieldLPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+
+        javax.swing.GroupLayout jPanelLoginLayout = new javax.swing.GroupLayout(jPanelLogin);
+        jPanelLogin.setLayout(jPanelLoginLayout);
+        jPanelLoginLayout.setHorizontalGroup(
+            jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLoginLayout.createSequentialGroup()
+                .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelLoginLayout.createSequentialGroup()
                         .addGap(331, 331, 331)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanelLoginLayout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addComponent(jLabel4)
                         .addGap(32, 32, 32)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jTextFieldLUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanelLoginLayout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addComponent(jLabel5)
                         .addGap(44, 44, 44)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelLoginLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addComponent(jButtonLSignUp)
                                 .addGap(34, 34, 34)
                                 .addComponent(jButtonLSignIn))
-                            .addComponent(jTextFieldLPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanelLoginLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldLPassword)))))
                 .addGap(150, 150, 150))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLoginLayout.createSequentialGroup()
                 .addComponent(jLabel7)
                 .addGap(292, 292, 292))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelLoginLayout.setVerticalGroup(
+            jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLoginLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel6)
                     .addComponent(jTextFieldLUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(50, 50, 50)
+                .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel3)
                     .addComponent(jTextFieldLPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(71, 71, 71)
+                .addGroup(jPanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonLSignUp)
                     .addComponent(jButtonLSignIn))
                 .addGap(18, 18, 18)
@@ -159,7 +336,7 @@ System.out.println(getHeight());
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 750, 450));
+        jPanel1.add(jPanelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 750, 450));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/smart_agriculture_management_system/Golden-Hour-Welcome-Still_Shift-HD (1).png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -171,12 +348,155 @@ System.out.println(getHeight());
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLSignUpActionPerformed
-        // TODO add your handling code here:
+        jPanelLogin.setVisible(false);
+        jPanelCreateAccount.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonLSignUpActionPerformed
 
     private void jButtonLSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLSignInActionPerformed
+
+        String user = jTextFieldLUserName.getText();
+        String pass = jTextFieldLPassword.getText();
+
+        try {
+            DatabaseHelper db = new DatabaseHelper();
+
+
+            int userId = db.getUserId(user, pass);
+
+            if (userId == -1) {
+                javax.swing.JOptionPane.showMessageDialog(this, 
+                    "Username or Password Incorrect!");
+                return;
+            }
+            Session.setUserId(userId);
+            String role = db.getUserRoleById(userId);
+ 
+            if (role.equalsIgnoreCase("Farmer")) {
+                new FarmerForm().setVisible(true);
+            } else if (role.equalsIgnoreCase("Buyer")) {
+                new BuyerForm().setVisible(true);
+            } else if (role.equalsIgnoreCase("Officer")) {
+                new OfficerForm().setVisible(true);
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, 
+                    "Unknown Role!");
+                return;
+            }
+
+            this.dispose();
+
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "Error: " + e.getMessage());
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonLSignInActionPerformed
+
+    private void jButtonCABackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCABackActionPerformed
+        jPanelCreateAccount.setVisible(false);
+        jPanelLogin.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCABackActionPerformed
+
+    private void jButtonCACreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCACreateActionPerformed
+
+
+        // Get values from fields
+        String fullName = jTextFieldCAFullName.getText().trim();
+        String nic = jTextFieldCANIC.getText().trim();
+        String address = jTextFieldCAAddress.getText().trim();
+        String email = jTextFieldCAEmail.getText().trim();
+        String role = jComboBoxCARole.getSelectedItem().toString();
+        String phone = jTextFieldCAPhoneNo.getText().trim();
+        String username = jTextFieldCAUserName.getText().trim();
+        String password = jTextFieldCApassword.getText().trim();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String DOB = sdf.format(jDateChooserCADOB.getDate());
+
+       
+        if (fullName.isEmpty() ||
+            nic.isEmpty() ||
+            address.isEmpty() ||
+            email.isEmpty() ||
+            phone.isEmpty() ||
+            username.isEmpty() ||
+            password.isEmpty() ||
+            jDateChooserCADOB.getDate() == null) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Please fill all fields.");
+
+            return;
+        }
+
+        try {
+
+            
+            User user = new User();
+
+            user.setFullName(fullName);
+            user.setNic(nic);
+            user.setAddress(address);
+            user.setEmail(email);
+            user.setRole(role);
+            user.setPhoneNo(phone);
+            user.setUserName(username);
+            user.setPassword(password);
+
+            // ================= DATABASE HELPER =================
+            DatabaseHelper db = new DatabaseHelper();
+
+            // Check existing username/password
+            boolean exists = db.loginUser(username);
+
+            if (exists) {
+
+                JOptionPane.showMessageDialog(this,
+                        "Username already exists!");
+
+                return;
+            }
+
+            // ================= INSERT USER =================
+            boolean inserted = db.insertUser(
+                    fullName,
+                    username,
+                    password,
+                    role,
+                    phone,
+                    email,
+                    address,
+                    DOB,
+                    nic
+                    
+                            
+            );
+
+            if (inserted) {
+
+                JOptionPane.showMessageDialog(this,
+                        "User Registered Successfully!");
+
+            } else {
+
+                JOptionPane.showMessageDialog(this,
+                        "Registration Failed!");
+
+            }
+
+        } catch (IllegalArgumentException e) {
+
+            JOptionPane.showMessageDialog(this,
+                    e.getMessage());
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Error : " + e.getMessage());
+
+        }
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCACreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,18 +524,49 @@ System.out.println(getHeight());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCABack;
+    private javax.swing.JButton jButtonCACreate;
     private javax.swing.JButton jButtonLSignIn;
     private javax.swing.JButton jButtonLSignUp;
+    private javax.swing.JComboBox<String> jComboBoxCARole;
+    private com.toedter.calendar.JDateChooser jDateChooserCADOB;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextFieldLPassword;
+    private javax.swing.JPanel jPanelCreateAccount;
+    private javax.swing.JPanel jPanelLogin;
+    private javax.swing.JTextField jTextFieldCAAddress;
+    private javax.swing.JTextField jTextFieldCAEmail;
+    private javax.swing.JTextField jTextFieldCAFullName;
+    private javax.swing.JTextField jTextFieldCANIC;
+    private javax.swing.JTextField jTextFieldCAPhoneNo;
+    private javax.swing.JTextField jTextFieldCAUserName;
+    private javax.swing.JTextField jTextFieldCApassword;
+    private javax.swing.JPasswordField jTextFieldLPassword;
     private javax.swing.JTextField jTextFieldLUserName;
     // End of variables declaration//GEN-END:variables
 }
